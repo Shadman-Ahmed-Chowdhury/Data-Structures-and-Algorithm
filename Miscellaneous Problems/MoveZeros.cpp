@@ -1,3 +1,11 @@
+/**
+Given an array nums: [1, 0, 2, 5, 0, 3]
+The program have to move all 0's to the end of it while maintaining the relative order of the non-zero elements in the same array.
+[1, 2, 5, 3, 0, 0]
+
+**/
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -26,3 +34,16 @@ int main()
     cout << endl;
     return 0;
 }
+
+/**
+
+Input:
+
+6
+1 0 2 5 0 3
+
+Output:
+
+1 2 5 3 0 0
+
+**/
