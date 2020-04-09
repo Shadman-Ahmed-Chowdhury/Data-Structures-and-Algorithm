@@ -67,17 +67,24 @@ int main()
     for(int i = 0; i < n * 2; i++) {
         cout << tree[i] << " ";
     }*/
-    cout << endl;
     //sum of index 2 to 6
     int sum = query(1, 1, n, 2, 6); //sum = 2
     cout << sum << endl;
 
-    update(1, 1, n, 3, 2);
-    for(int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-    int newSum = query(1, 1, n, 2, 6);
-    cout << newSum << endl;
 
     return 0;
 }
+
+/**
+
+Input:
+
+7
+4 -9 3 7 1 0 2
+
+Output:
+
+2
+
+**/
+
