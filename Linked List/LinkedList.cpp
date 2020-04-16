@@ -2,12 +2,16 @@
 
 using namespace std;
 
+
+//Structure of a node
 class Node {
 public:
     int data;
     Node *next;
 };
 
+
+//Inserting node at the beginning of a linked list
 void push(Node **head_ref, int new_data)
 {
     Node *new_node = new Node();
@@ -20,6 +24,8 @@ void push(Node **head_ref, int new_data)
     (*head_ref) = new_node;
 }
 
+
+//Inserting node at the end of an array
 void append(Node *n, int new_data)
 {
     Node *new_node = new Node();
@@ -34,6 +40,8 @@ void append(Node *n, int new_data)
     n->next = new_node;
 
 }
+
+//Inserting Node after a specific node
 void insertAfter(Node *prev_node, int new_data)
 {
     if(prev_node == NULL) {
@@ -49,15 +57,7 @@ void insertAfter(Node *prev_node, int new_data)
     prev_node->next = new_node;
 }
 
-void print_list(Node *n)
-{
-    cout << "\nPrinting the list: " << endl;
-    while(n != NULL) {
-        cout << n->data << " ";
-        n = n->next;
-    }
-}
-
+//Length of the linked list
 int number_of_nodes(Node *n) {
     int cnt = 0;
     while(n != NULL) {
@@ -66,6 +66,8 @@ int number_of_nodes(Node *n) {
     }
     return cnt;
 }
+
+//Delete a node at a specific position
 void delete_node_at_pos(Node **head_ref, int position) {
     if(*head_ref == NULL)
         return;
@@ -91,6 +93,8 @@ void delete_node_at_pos(Node **head_ref, int position) {
 
 }
 
+
+//Delete a node from a linked with a given key
 void deleteNode(Node **head_ref, int key) {
     Node *temp = *head_ref, *prev;
 
@@ -105,6 +109,44 @@ void deleteNode(Node **head_ref, int key) {
     if(temp == NULL)
         return;
     prev->next = temp->next;
+}
+
+//Search an element from a linked list
+bool search(Node *n, int key)
+{
+    while(n != NULL) {
+        if(n->data == key)
+            return true;
+        n = n->next;
+    }
+    return false;
+}
+
+
+//Print the values of the linked list
+void print_list(Node *n)
+{
+    cout << "\nPrinting the list: " << endl;
+    while(n != NULL) {
+        cout << n->data << " ";
+        n = n->next;
+    }
+}
+
+
+//Print the value of the middle node of the linked list
+void printMiddle(Node *head)
+{
+    Node *fast_ptr = head;
+    Node *slow_ptr = head;
+
+    if(head != NULL) {
+        while(fast_ptr != NULL && fast_ptr->next != NULL) {
+            fast_ptr = fast_ptr->next->next;
+            slow_ptr = slow_ptr->next;
+        }
+        printf("\nThe middle of linked list is [%d]\n", slow_ptr->data);
+    }
 }
 
 int main()
@@ -144,6 +186,13 @@ int main()
 
     delete_node_at_pos(&head, 5);
     print_list(head);
+
+    if(search(head, 4)) {
+        cout << "\n4 is present" << endl;
+    }
+    else {
+        cout << "\n4 is not present" << endl;
+    }
 
     return 0;
 }
