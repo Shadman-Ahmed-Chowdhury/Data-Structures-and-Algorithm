@@ -32,6 +32,8 @@ bool checkValidString(string str) {
             return false;
     }
     return true;
+{
+
 }
 int main()
 {
