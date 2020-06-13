@@ -1,3 +1,6 @@
 # Data-Structures-and-Algorithm
-It is repository that is a collection of Data structures and Algorithm implemented in C++.
+
+This repository is a collection of some basic data structures and algorithms for solving problems in programming contest.
+
+The contents and ordering of the contents follow the book of Mahbubul Hasan Shanto. 
 
