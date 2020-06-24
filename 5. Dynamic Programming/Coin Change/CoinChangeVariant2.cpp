@@ -3,9 +3,12 @@
 Coin Change Variant 1
 
 Input: amount = 3, coins = [1, 2, 5]
-Output: Possible
-Explanation: It is possible to make the amount 3(1 + 2 or 2 + 1)
+Output: 3
+Explanation: there are four ways to make up the amount:
 
+3 = 3
+3 = 1 + 2
+3 = 2 + 1
 
 **/
 
@@ -13,19 +16,16 @@ Explanation: It is possible to make the amount 3(1 + 2 or 2 + 1)
 
 using namespace std;
 
-bool change(int amount, vector<int>& coins) {
-    vector <int> possible(amount + 1);
-    possible[0] = 1;
+int change(int amount, vector<int>& coins) {
+    vector <int> way(amount + 1);
+    way[0] = 1;
     for(int i = 1; i <= amount; i++) {
         for(int j = 0; j < coins.size(); j++) {
             if(i >= coins[j])
-                possible[i] |= possible[i - coins[j]];
+                way[i] += way[i - coins[j]];
         }
     }
-    if(possible[amount] == 1)
-        return true;
-    else
-        return false;
+    return way[amount];
 }
 int main()
 {
@@ -39,10 +39,7 @@ int main()
     }
     int amount;
     cin >> amount;
-    if(change(amount, coins))
-        cout << "Possible\n" << endl;
-    else
-        cout << "Not Possible\n" << endl;
+    cout << change(amount, coins) << endl;
     return 0;
 }
 
@@ -51,10 +48,11 @@ Input
 
 3   // Number of coins
 1 2 5  //Coins of different denominations
-3 //Required Amount
+5 //Required Amount
 
 Output
-Possible
+4
 
 **/
+
 
