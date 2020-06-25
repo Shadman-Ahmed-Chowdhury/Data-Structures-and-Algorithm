@@ -1,7 +1,7 @@
 /**
 
 Coin Change Variant 1
-
+** In this problem, we can choose the coins as many times we want.
 Input: amount = 3, coins = [1, 2, 5]
 Output: Possible
 Explanation: It is possible to make the amount 3(1 + 2 or 2 + 1)

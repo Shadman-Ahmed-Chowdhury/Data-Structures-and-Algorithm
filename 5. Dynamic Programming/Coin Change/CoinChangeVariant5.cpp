@@ -1,16 +1,18 @@
 /**
 
-Coin Change Variant 1
-** In this problem, we can choose the coins as many times we want
-but 3 = 1 + 2 and 3 = 2 + 1 are two solutions
+Coin Change Variant 5
+
+** In this problem, we can choose the coins as many times we want.
+but 3 = 1 + 2 and 3 = 2 + 1 is the solution
 
 Input: amount = 3, coins = [1, 2, 5]
-Output: 3
-Explanation: there are three ways to make up the amount:
+Output: 5
+Explanation: there are four ways to make up the amount:
 
-3 = 3
-3 = 1 + 2
-3 = 2 + 1
+5 = 5
+5 = 2 + 2 + 1
+5 = 2 + 1 + 1 + 1
+5 = 1 + 1 + 1 + 1
 
 **/
 
@@ -21,10 +23,10 @@ using namespace std;
 int change(int amount, vector<int>& coins) {
     vector <int> way(amount + 1);
     way[0] = 1;
-    for(int i = 1; i <= amount; i++) {
-        for(int j = 0; j < coins.size(); j++) {
-            if(i >= coins[j])
-                way[i] += way[i - coins[j]];
+    for(int i = 0; i < coins.size(); i++) {
+        int k = 0;
+        for(int j = coins[i]; j <= amount; j++) {
+            way[j] += way[k++];
         }
     }
     return way[amount];
@@ -50,10 +52,10 @@ Input
 
 3   // Number of coins
 1 2 5  //Coins of different denominations
-3 //Required Amount
+5 //Required Amount
 
 Output
-3
+4
 
 **/
 
