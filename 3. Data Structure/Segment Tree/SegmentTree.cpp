@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+
 #define mx 100001
 
 int arr[mx];
@@ -59,15 +60,12 @@ int main()
     for(int i = 1; i <= n; i++) {
         cin >> arr[i];
     }
-    //example array
-    //7
-    //4 -9 3 7 1 0 2
+
     init(1, 1, n);
     /* For testing the segment tree
     for(int i = 0; i < n * 2; i++) {
         cout << tree[i] << " ";
     }*/
-    //sum of index 2 to 6
     int sum = query(1, 1, n, 2, 6); //sum = 2
     cout << sum << endl;
 
