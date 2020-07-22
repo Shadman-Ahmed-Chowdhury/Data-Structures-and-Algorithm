@@ -4,7 +4,7 @@
 Coin Change Variant 3
 ** In this problem, we can choose any coin only once
 
-Input: amount = 4, coins = [1, 2, 5]
+Input: amount = 3, coins = [1, 2, 5]
 Output: Possible
 Explanation: It is possible to make the amount by using any coin only once
 
@@ -53,10 +53,10 @@ Input
 
 3   // Number of coins
 1 2 5  //Coins of different denominations
-6 //Required Amount
+4 //Required Amount
 
 Output
-Possible
+Not Possible
 
 **/
 

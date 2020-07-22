@@ -3,7 +3,7 @@
 Coin Change Variant 5
 
 ** In this problem, we can choose the coins as many times we want.
-but 3 = 1 + 2 and 3 = 2 + 1 is the solution
+but 3 = 1 + 2 and 3 = 2 + 1 is same the solution(arrangements doesn't matter)
 
 Input: amount = 3, coins = [1, 2, 5]
 Output: 5
@@ -12,7 +12,7 @@ Explanation: there are four ways to make up the amount:
 5 = 5
 5 = 2 + 2 + 1
 5 = 2 + 1 + 1 + 1
-5 = 1 + 1 + 1 + 1
+5 = 1 + 1 + 1 + 1 + 1
 
 **/
 
