@@ -1,14 +1,14 @@
 /**
 
-Coin Change Variant 1
-** In this problem, we can choose the coins as many times we want
+Coin Change Variant 2
+** In this problem, we can choose the coins as many times we want.
 but 3 = 1 + 2 and 3 = 2 + 1 are two solutions
 
 Input: amount = 3, coins = [1, 2, 5]
 Output: 3
 Explanation: there are three ways to make up the amount:
 
-3 = 3
+3 = 1 + 1 + 1
 3 = 1 + 2
 3 = 2 + 1
 
